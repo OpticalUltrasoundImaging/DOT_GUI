@@ -2,3 +2,5 @@ dextr_pascal-sbd.pth filter=lfs diff=lfs merge=lfs -text
 GUI/for_redistribution_files_only/GUI.exe filter=lfs diff=lfs merge=lfs -text
 GUI/for_redistribution/MyAppInstaller_web.exe filter=lfs diff=lfs merge=lfs -text
 us_feature.pt filter=lfs diff=lfs merge=lfs -text
+us_final.pth filter=lfs diff=lfs merge=lfs -text
+vgg_41_ours.pth filter=lfs diff=lfs merge=lfs -text
