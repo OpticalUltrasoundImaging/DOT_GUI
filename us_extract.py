@@ -68,7 +68,7 @@ def us_feature_extract(inputs):
         outputs = torch.reshape(outputs,(outputs.shape[0],64,8,8)).numpy()
     else:
         outputs = torch.reshape(outputs,(outputs.shape[0],64,8,8)).cpu().detach().numpy()
-    
+    imgs = np.asarray(input_data )
     return outputs
     
     

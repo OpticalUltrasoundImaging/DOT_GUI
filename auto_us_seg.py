@@ -47,14 +47,16 @@ def auto_seg(img_path):
     enhanced_image = np.array(im_output)
     image = np.array(raw_img)
     msk_target = cv2.inRange(image, np.array([2, 2, 2]), np.array([255, 255, 255]))
-    mid_line_pos = round(msk_target.shape[1]*0.5)
-    right_line_pos = round(msk_target.shape[1]*0.6)
-    left_line_pos = round(msk_target.shape[1]*0.4)
+    mid_line_pos = round(msk_target.shape[1]*0.45)
+    right_line_pos = round(msk_target.shape[1]*0.55)
+    left_line_pos = round(msk_target.shape[1]*0.35)
     mid_length_up = right_length_up = left_length_up = 0
     mid_length_low = right_length_low = left_length_low = 0
     mid_start = right_start = left_start = 0
     mid_pin = right_pin = left_pin = 0
     break_time = 0
+    ## based on our US, we try to find top, bottom, left and right boundary of the 
+    ## image.
     for depth in range(round(0.09*msk_target.shape[0]), msk_target.shape[0]-1):
         if not mid_pin:
             if msk_target[depth,mid_line_pos] == 0:
@@ -203,12 +205,15 @@ def auto_seg(img_path):
     left_bound = min(mid_left_bound, up_left_bound, low_left_bound)
     right_bound = max(mid_right_bound, up_right_bound, low_right_bound)
     top_bound = round((mid_upper_bound+right_upper_bound+left_upper_bound)/3) + round(0.028*msk_target.shape[0])
+
+    ## after cropping the image, try to find the labels and calculate 1cm vs. # of pixels
     if msk_target.shape[0] < 800:
         cropped_img = enhanced_image[upper_bound:lower_bound,left_bound:right_bound,:]
         msk = cv2.inRange(cropped_img, np.array([1, 1, 1]), np.array([255, 255, 255])) 
     else:
         cropped_img = image[upper_bound:lower_bound,left_bound:right_bound,:]
         msk = cv2.inRange(cropped_img, np.array([250, 250, 250]), np.array([255, 255, 255])) 
+    msk = msk[:round(msk.shape[0]*0.8),:] # assume label 1 2 3 are not in the last 20% of the height
     sum_row = np.sum(msk, axis = 0)
     delete_col = []
     cols_ends = []
@@ -230,8 +235,8 @@ def auto_seg(img_path):
     mean_diff = []
     for col_index in range(len(sum_row)):
         col_list = cols_ends[col_index]
-        if col_list and col_list[0] > 0.3 * msk.shape[0]:
-            continue
+        # if col_list and col_list[0] > 0.3 * msk.shape[0]: # probabily the top part didnt recongnized, starting at 1 not the rectangle
+        #     continue
         col_diff = [col_list[n]-col_list[n-1] for n in range(1,len(col_list))]
         if col_diff and len(col_diff) >= 2:
             if len(col_diff) >= 3:

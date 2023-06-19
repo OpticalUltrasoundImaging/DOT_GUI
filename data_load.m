@@ -44,6 +44,12 @@ for idx = 1:tar_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -63,6 +69,12 @@ for idx = 1:tar_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -82,6 +94,12 @@ for idx = 1:tar_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -117,6 +135,12 @@ for idx = 1:ref_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -136,6 +160,12 @@ for idx = 1:ref_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -155,6 +185,12 @@ for idx = 1:ref_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -188,6 +224,12 @@ for idx = 1:intra_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -207,6 +249,12 @@ for idx = 1:intra_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end
@@ -226,6 +274,12 @@ for idx = 1:intra_nLesion
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_UConn(bgdata,source,detect,sddist_matrix);
     elseif mode == 3
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys4_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 4
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys1_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 5
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys3_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
+    elseif mode == 6
+        [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys2a_FPGA_ref_phase(bgdata,source,detect,sddist_matrix);
     else
         [amp74,amp78,amp80,amp83,pha74,pha78,pha80,pha83]=load_wave_sys6(bgdata,source,detect,0);
     end

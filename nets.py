@@ -7,7 +7,9 @@ Created on Thu Mar  3 15:12:54 2022
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
+import numpy as np
 
 # CNN model 1, stack on fully connected layers
 class DOT_classification(nn.Module):
@@ -197,7 +199,40 @@ class DOT_classification_Reconimages_only(nn.Module):
         outputs = self.linear2(x)
         return outputs, x1
 
- 
+class DOT_classification_imageOnly(nn.Module):
+    def __init__(self):
+        super(DOT_classification_imageOnly, self).__init__()
+        # 3 Convolutional layers
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3, padding=1)
+        self.batch1 = nn.BatchNorm2d(16)
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=64, kernel_size=3, padding=1)
+        self.batch2 = nn.BatchNorm2d(64)
+        self.conv3 = nn.Conv2d(in_channels=64, out_channels=32, kernel_size=3, padding=1)
+        self.batch3 = nn.BatchNorm2d(32)
+        self.maxpool = nn.MaxPool2d((2, 2), stride=(2, 2))     
+        self.linear1 = nn.Linear(512, 64)
+        self.linear2 = nn.Linear(64, 1)
+        self.ReLu = torch.nn.ReLU()
+        
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.batch1(x)
+        x = self.ReLu(x)
+        x = self.maxpool(x)
+        x = self.conv2(x)
+        x = self.batch2(x)
+        x = self.ReLu(x)
+        x = self.maxpool(x)
+        feature = torch.clone(x) # Output reconstructed image features 8 by 8 by 64
+        x = self.conv3(x)
+        x = self.batch3(x)
+        x = self.ReLu(x)
+        x = self.maxpool(x)
+        x = x.view(x.size(0), -1)
+        x = self.linear1(x)
+        x = self.ReLu(x)
+        x = self.linear2(x)
+        return x, feature 
 
 class DOT_classification_combine_imgandUS(nn.Module):
     def __init__(self):

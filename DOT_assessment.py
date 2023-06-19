@@ -68,7 +68,7 @@ def dot_imageval(inputs):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     imgs_t = imgs_t.to(device)
     
-    model.load_state_dict(torch.load('myFirstModel.pth',map_location=torch.device(device)))
+    model.load_state_dict(torch.load('DOT_eval.pth',map_location=torch.device(device)))
     model.to(device)
     model.eval()
     
