@@ -11,11 +11,12 @@ Ultrasound (US)-guided diffuse optical tomography (DOT) is a portable and non-in
 
 ## Requirements
 * Python: 3.7+
-* torch(pytorch): 1.10.0
-* torchvision: 0.11.1
-* numpy: 1.21.2 
-* scipy: 1.7.1
-* scikit-learn: 1.3
+* torch(pytorch): 1.10+
+* torchvision: 0.11.1+
+* numpy: 1.21.2+
+* scipy: 1.7.1+
+* scikit-learn: 1.3+
+* DEXTR (https://github.com/scaelles/DEXTR-PyTorch/)
 
 
 ## Contact
