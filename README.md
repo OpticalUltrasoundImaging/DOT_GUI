@@ -13,6 +13,9 @@ Ultrasound (US)-guided diffuse optical tomography (DOT) is a portable and non-in
 This pipeline consists of two main windows, a pre-processing window, and an imaging window.
 ![This is an image](https://github.com/OpticalUltrasoundImaging/DOT_GUI/blob/main/Figures/GUI.png)
 
+The pre-processing section includes motion detection, mismatch identification, phase unwrapping, and outlier removal. It generates the best and clean perturbation from target, reference, and intralipid measurements.
+The imaging section employs US segmentation, DOT reconstruction, DOT image evaluation, and some diagnosis algorithm.
+
 ## Requirements
 * Python: 3.7+
 * torch(pytorch): 1.10+
